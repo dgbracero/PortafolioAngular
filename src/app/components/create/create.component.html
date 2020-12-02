@@ -1,7 +1,7 @@
 <div class="container">
     <h2>{{title}}</h2>
 
-    <form #projectFrom="ngForm" (ngSubmit)="onSubmit(projectForm)">
+    <form  #projectFrom="ngForm" (ngSubmit)="onSubmit(projectForm)">
         <p>
             <label for="name">Nombre</label>
             <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" />
@@ -19,7 +19,7 @@
 
         <p>
             <label for="year"> Año de lanzamiento</label>
-            <input type="number" name="name" #year="ngModel" [(ngModel)]="project.year" />
+            <input type="number" name="year" #year="ngModel" [(ngModel)]="project.year" />
         </p>
 
         <p>
@@ -32,7 +32,7 @@
             <input type="file" name="image" placeholder="Subir imagen"/>
         </p>
 
-        <input type="submit" value="Enviar">
+        <input class="btn btn-info btn-block" type="submit" value="Enviar">
 
     </form>
 </div>
