@@ -1,20 +1,33 @@
 <div class="container">
     <h2>{{title}}</h2>
 
-    <form  #projectFrom="ngForm" (ngSubmit)="onSubmit(projectForm)">
+    <form  #projectFrom="ngForm" (ngSubmit)="onSubmit(projectForm)"> 
         <p>
             <label for="name">Nombre</label>
-            <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" />
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" 
+            required/>
+            <span class="form-error" *ngIf="name.touched && !name.valid">
+                <br>
+                El nombre es obligatorio
+            </span>
         </p>
 
         <p>
             <label for="description">Descripción</label>
-            <textarea name="description" #description="ngModel" [(ngModel)]="project.description"></textarea>
+            <textarea name="description" #description="ngModel" [(ngModel)]="project.description" required></textarea>
+            <br>
+            <span class="form-error" *ngIf="description.touched && !description.valid">
+                La descripción es obligatorio
+            </span>
         </p>
 
         <p>
             <label for="category">Categoria</label>
-            <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" />
+            <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" required/>
+            <span class="form-error" *ngIf="category.touched && !category.valid">
+                <br>
+                La categoría es obligatoria
+            </span>
         </p>
 
         <p>
@@ -23,8 +36,12 @@
         </p>
 
         <p>
-            <label for="langs"> Categoria</label>
-            <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" />
+            <label for="langs"> Lenguajes utilizados</label>
+            <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" required/>
+            <span  class="form-error" *ngIf="langs.touched && !langs.valid">
+                <br>
+                El lenguaje es obligatorio
+            </span>
         </p>
 
         <p>
@@ -32,7 +49,7 @@
             <input type="file" name="image" placeholder="Subir imagen"/>
         </p>
 
-        <input class="btn btn-info btn-block" type="submit" value="Enviar">
+        <input class="btn btn-info btn-block" type="submit" value="Enviar"/>
 
     </form>
 </div>

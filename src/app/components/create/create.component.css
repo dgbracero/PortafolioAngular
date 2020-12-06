@@ -54,3 +54,11 @@ form input[type="submit"]:hover{
     width: 80%;
     background-color: #17a2b8;
 }
+
+form input[disabled]{
+    background-color: #ccc;
+}
+
+.form-error{
+    color: red;
+}

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { from } from 'rxjs';
 import { Project } from '../../models/project';
 import { ProjectService } from '../../services/project.service';
-
 
 @Component({
   selector: 'app-create',
@@ -21,10 +21,10 @@ export class CreateComponent implements OnInit {
     this.project = new Project('','','','',2020,'','');
   }
 
-  ngOnInit(): void {
+  ngOnInit(){
   }
 
   onSubmit(form){
-    console.log(this.project);
+    //console.log(this.project);
   }
 }
