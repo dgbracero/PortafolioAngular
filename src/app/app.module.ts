@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {routing, appRoutingProviders} from './app.routing';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,24 +17,30 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    routing,
+    HttpClientModule,
+    FormsModule,
+    BrowserModule,
+    ReactiveFormsModule
+  ], 
   declarations: [
     AppComponent,
     AboutComponent,
     ProjectsComponent,
     CreateComponent,
     ContactComponent,
-    ErrorComponent
+    ErrorComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    routing,
-    HttpClientModule,
-    FormsModule
-  ], 
   providers: [
     appRoutingProviders
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(){
+
+  }
+}

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { from } from 'rxjs';
+import { from} from 'rxjs';
 import { Project } from '../../models/project';
 import { ProjectService } from '../../services/project.service';
+import { NgForm, NgModel } from '@angular/forms'  
 
 @Component({
   selector: 'app-create',
@@ -21,10 +22,18 @@ export class CreateComponent implements OnInit {
     this.project = new Project('','','','',2020,'','');
   }
 
-  ngOnInit(){
+  ngOnInit(): void{
   }
 
-  onSubmit(form){
+  onSubmit(form:NgForm){
     //console.log(this.project);
+    this._projectService.saveProject(this.project).subscribe(
+      response=>{
+        console.log(response);
+      },
+      error=>{
+        console.log(<any>error);
+      }
+    );
   }
 }

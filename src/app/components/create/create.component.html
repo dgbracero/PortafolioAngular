@@ -1,7 +1,7 @@
 <div class="container">
     <h2>{{title}}</h2>
 
-    <form  #projectFrom="ngForm" (ngSubmit)="onSubmit(projectForm)"> 
+    <form  #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)"> 
         <p>
             <label for="name">Nombre</label>
             <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" 
@@ -49,7 +49,7 @@
             <input type="file" name="image" placeholder="Subir imagen"/>
         </p>
 
-        <input class="btn btn-info btn-block" type="submit" value="Enviar"/>
+        <input class="btn btn-info btn-block" type="submit" value="Enviar" [disabled]="!projectForm.form.valid"/>
 
     </form>
 </div>
