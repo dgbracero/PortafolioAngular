@@ -67,3 +67,19 @@ form input[disabled]{
 .form-error{
     color: red;
 }
+
+.message{
+    width: 50%;
+    padding: 5px;
+    
+}
+
+.success{
+    color: green;
+    border: 1px solid #48C9B0;
+}
+
+.failed{
+    color: red;
+    border: 1px solid red;
+}
