@@ -5,9 +5,9 @@
         El proyecto se ha creado correctamente, puedes <a href="#">verlo aquí</a> 
     </div>
 
-    <div class=" message failed" *ngIf = "!status == failed"> 
+    <div class=" message failed" *ngIf = "status == 'failed'"> 
         El proyecto no se ha podido crear
-    </div>
+    </div>  
 
     <form  #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)"> 
         <p>
