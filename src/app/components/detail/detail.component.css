@@ -1,0 +1,25 @@
+.image{
+    float: left;
+    width: 50%;
+}
+
+img{
+    width: 400px; height: 300px;
+    padding: 20px;
+
+}
+
+.container .data{
+    float: left;
+    width: 49%;
+}
+
+.container{
+    float: left;
+    width: 85%;
+}
+
+a{
+    margin: 10px;
+}
+

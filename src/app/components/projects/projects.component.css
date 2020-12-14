@@ -5,8 +5,31 @@ li{
     display: block;
     float: left;
     width: 25%;
+    text-align: center;
+}
+
+
+.image{
+    width: 100%;
+    overflow: hidden;
+}
+
+.image:hover {
+    -webkit-transform:scale(1.2);transform:scale(1.2);
+    overflow:hidden;
 }
 
 img{
-    width: 200px; height: 200px;
+    width: 260px; height: 200px;
+    padding: 20px;
+}
+
+.enlace{
+    text-decoration: none;
+    color: black;
+}
+
+.enlace:hover{
+    color: #48C9B0;
+    
 }
