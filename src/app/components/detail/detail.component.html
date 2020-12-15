@@ -9,9 +9,16 @@
         <p>{{project.category}}</p>
         <p>{{project.langs}}</p>
 
-        <P>
+        <P *ngIf="confirm == false">
             <a [routerLink]="['/editar-proyecto', project._id]" class="btn btn-info">Editar</a>
-            <a (click)="deleteProject(project._id)" class="btn btn-outline-danger">Eliminar</a>
+            <a (click)="setConfirm(true)" class="btn btn-danger">Eliminar</a>
+        </P>
+
+        <P *ngIf="confirm == true">
+            <span style="color: red;">¿Estas seguro de eliminar este proyecto?</span>
+            <br>
+            <a (click)="setConfirm(false)" class="btn btn-success">No</a>
+            <a (click)="deleteProject(project._id)" class="btn btn-danger" onclick="alert('Proyecto Eliminado')">Si</a>
         </P>
 
 
