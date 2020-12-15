@@ -41,12 +41,17 @@ export class CreateComponent implements OnInit {
           
 
           //Subir la imagen
+        if(this.filesToUpload){
           this._uploadService.makeFileRequest(Global.url + "upload-image/" + response.project._id, [], this.filesToUpload, 'image' ).then((result:any) => {
             this.status = 'success';
             this.save_project = result.project;
             form.reset();
           });
-
+        }else{
+          this.status = 'success';
+          this.save_project = response.project;
+          form.reset();
+        }
           
         }else{
           this.status = 'failed';

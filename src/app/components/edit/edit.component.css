@@ -83,13 +83,3 @@ form input[disabled]{
     color: red;
     border: 1px solid red;
 }
-.image{
-    float: left;
-    width: 50%;
-}
-
-img{
-    width: 400px; height: 300px;
-    padding: 20px;
-
-}
